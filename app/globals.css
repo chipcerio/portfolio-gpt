@@ -1,15 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f2ec;
-  --surface: #fffdf9;
-  --foreground: #1f2c32;
-  --muted: #5e6f75;
-  --line: #d2d4cf;
-  --brand: #186f65;
-  --brand-strong: #0f4d47;
-  --accent: #ef7f39;
-  --font-sans: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+  --background: #f7f9fc;
+  --surface: #ffffff;
+  --foreground: #0f1f33;
+  --muted: #4f6278;
+  --line: #dbe3ed;
+  --brand: #1f5ea8;
+  --brand-strong: #184c87;
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
   --font-mono: "Menlo", "Monaco", "Courier New", monospace;
 }
 
@@ -25,6 +24,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
+  line-height: 1.55;
 }
 
 * {
@@ -33,48 +33,4 @@ body {
 
 a {
   color: inherit;
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-up {
-  opacity: 0;
-  animation: fade-up 650ms ease forwards;
-}
-
-.delay-1 {
-  animation-delay: 120ms;
-}
-
-.delay-2 {
-  animation-delay: 220ms;
-}
-
-.delay-3 {
-  animation-delay: 320ms;
-}
-
-.grain {
-  position: relative;
-}
-
-.grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 0.4px, transparent 0.4px);
-  background-size: 4px 4px;
-  mix-blend-mode: multiply;
-  opacity: 0.22;
 }
