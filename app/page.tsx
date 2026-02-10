@@ -12,7 +12,13 @@ const skillGroups = [
   },
   {
     label: "Mobile",
-    items: ["React Native", "Expo", "Android", "iOS", "App performance tuning"],
+    items: [
+      "React Native",
+      "Expo",
+      "Android",
+      "iOS",
+      "App performance tuning",
+    ],
   },
   {
     label: "Data & API",
@@ -106,59 +112,105 @@ const experience = [
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-5xl px-5 py-8 md:px-10 md:py-12">
-      <header className="rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-6 md:p-10">
-        <p className="text-sm font-medium text-[var(--brand)]">Alistair Cerio</p>
-        <h1 className="mt-2 text-3xl font-bold leading-tight md:text-5xl">
-          React and React Native Engineer
-        </h1>
-        <p className="mt-4 max-w-3xl text-[var(--muted)] md:text-lg">
-          I build reliable web and mobile products with clean code, practical architecture, and a strong focus on user experience.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href="mailto:alistair.cerio@gmail.com"
-            className="rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--brand-strong)]"
-          >
-            Email Me
-          </a>
-          <a
-            href="https://www.linkedin.com/in/chipcerio"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-lg border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="/AlistairCerio_React_CV.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-lg border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold"
-          >
-            Resume
-          </a>
+    <main className="mx-auto w-full max-w-6xl px-5 pb-14 pt-7 md:px-10 md:pb-20 md:pt-12">
+      <header
+        className="panel reveal grid gap-6 overflow-hidden p-6 md:p-10 lg:grid-cols-[1.35fr_0.8fr] lg:gap-10"
+        style={{ animationDelay: "20ms" }}
+      >
+        <div>
+          <p className="kicker">Editorial Tech Portfolio</p>
+          <h1 className="font-display mt-4 text-4xl leading-[0.95] text-[var(--ink)] md:text-6xl">
+            Alistair Cerio
+            <span className="mt-2 block text-2xl leading-tight text-[var(--brand-strong)] md:text-4xl">
+              React and React Native Engineer
+            </span>
+          </h1>
+          <p className="mt-5 max-w-2xl text-[1.02rem] text-[var(--muted)] md:text-lg">
+            I build reliable web and mobile products with clean code, practical
+            architecture, and a strong focus on user experience.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a
+              href="mailto:alistair.cerio@gmail.com"
+              className="rounded-full bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[var(--brand-strong)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand)]"
+            >
+              Email Me
+            </a>
+            <a
+              href="https://www.linkedin.com/in/chipcerio"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-[var(--line)] bg-white px-5 py-2.5 text-sm font-semibold transition hover:border-[var(--brand)] hover:text-[var(--brand-strong)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand)]"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="/AlistairCerio_React_CV.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-[var(--line)] bg-white px-5 py-2.5 text-sm font-semibold transition hover:border-[var(--brand)] hover:text-[var(--brand-strong)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand)]"
+            >
+              Resume
+            </a>
+          </div>
         </div>
+
+        <aside className="panel-soft h-fit p-5 md:p-6">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-strong)]">
+            Delivery Profile
+          </p>
+          <ul className="mt-4 space-y-2.5 text-sm text-[var(--muted)]">
+            {highlights.map((item) => (
+              <li key={item} className="flex gap-2.5">
+                <span className="mt-[0.36rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 rounded-lg border border-[var(--line)] bg-white px-4 py-3">
+            <p className="font-mono text-[0.69rem] uppercase tracking-[0.2em] text-[var(--muted)]">
+              Current Focus
+            </p>
+            <p className="mt-2 text-sm font-semibold text-[var(--ink)]">
+              Product-grade web and mobile frontend systems
+            </p>
+          </div>
+        </aside>
       </header>
 
-      <section className="mt-6 rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-6 md:p-8">
-        <h2 className="text-2xl font-semibold">What You Can Expect</h2>
-        <ul className="mt-4 grid gap-2 text-[var(--muted)] md:grid-cols-2">
-          {highlights.map((item) => (
-            <li key={item}>• {item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="mt-6 rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-6 md:p-8">
-        <h2 className="text-2xl font-semibold">Core Skills</h2>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
-          {skillGroups.map((group) => (
-            <article key={group.label} className="rounded-xl border border-[var(--line)] bg-white p-4">
-              <h3 className="text-sm font-semibold text-[var(--brand)]">{group.label}</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
+      <section
+        className="reveal mt-7"
+        style={{ animationDelay: "110ms" }}
+        aria-labelledby="skills-title"
+      >
+        <div className="mb-5 flex items-end justify-between gap-4">
+          <div>
+            <p className="kicker">Capabilities</p>
+            <h2 id="skills-title" className="section-title mt-3">
+              Core Skills
+            </h2>
+          </div>
+          <p className="hidden max-w-sm text-right text-sm text-[var(--muted)] md:block">
+            Reusable patterns built for maintainability, speed, and release
+            confidence.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {skillGroups.map((group, index) => (
+            <article
+              key={group.label}
+              className="panel-soft reveal p-5"
+              style={{ animationDelay: `${140 + index * 40}ms` }}
+            >
+              <h3 className="font-display text-2xl leading-none text-[var(--ink)]">
+                {group.label}
+              </h3>
+              <div className="mt-4 flex flex-wrap gap-2.5">
                 {group.items.map((skill) => (
-                  <span key={skill} className="rounded-md border border-[var(--line)] px-2.5 py-1 text-sm">
+                  <span
+                    key={skill}
+                    className="rounded-full border border-[var(--line)] bg-white px-3 py-1 text-sm text-[var(--muted)]"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -168,31 +220,71 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-6 rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-6 md:p-8">
-        <h2 className="text-2xl font-semibold">Selected Projects</h2>
-        <div className="mt-5 grid gap-4 md:grid-cols-3">
-          {projects.map((project) => (
-            <article key={project.name} className="rounded-xl border border-[var(--line)] bg-white p-4">
-              <h3 className="font-semibold">{project.name}</h3>
-              <p className="mt-2 text-sm text-[var(--muted)]">{project.detail}</p>
+      <section
+        className="reveal mt-10"
+        style={{ animationDelay: "170ms" }}
+        aria-labelledby="projects-title"
+      >
+        <div className="mb-5">
+          <p className="kicker">Builds</p>
+          <h2 id="projects-title" className="section-title mt-3">
+            Selected Projects
+          </h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {projects.map((project, index) => (
+            <article
+              key={project.name}
+              className="panel-soft reveal relative p-5 transition hover:-translate-y-0.5"
+              style={{ animationDelay: `${200 + index * 45}ms` }}
+            >
+              <div className="absolute left-5 top-0 h-1.5 w-16 rounded-b-full bg-[var(--brand)]" />
+              <h3 className="font-display mt-3 text-2xl leading-none text-[var(--ink)]">
+                {project.name}
+              </h3>
+              <p className="mt-3 text-sm text-[var(--muted)]">{project.detail}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mt-6 rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-6 md:p-8">
-        <h2 className="text-2xl font-semibold">Experience</h2>
-        <div className="mt-5 space-y-4">
-          {experience.map((item) => (
-            <article key={`${item.role}-${item.company}`} className="rounded-xl border border-[var(--line)] bg-white p-5">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-semibold md:text-lg">{item.role}</h3>
-                <p className="font-mono text-xs text-[var(--muted)]">{item.period}</p>
+      <section
+        className="reveal mt-10"
+        style={{ animationDelay: "230ms" }}
+        aria-labelledby="experience-title"
+      >
+        <div className="mb-5">
+          <p className="kicker">Journey</p>
+          <h2 id="experience-title" className="section-title mt-3">
+            Experience
+          </h2>
+        </div>
+        <div className="space-y-4">
+          {experience.map((item, index) => (
+            <article
+              key={`${item.role}-${item.company}`}
+              className="panel-soft reveal p-5 md:p-6"
+              style={{ animationDelay: `${270 + index * 35}ms` }}
+            >
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h3 className="font-display text-3xl leading-[0.9] text-[var(--ink)] md:text-4xl">
+                    {item.role}
+                  </h3>
+                  <p className="mt-1 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--brand-strong)]">
+                    {item.company}
+                  </p>
+                </div>
+                <p className="rounded-full border border-[var(--line)] bg-white px-3 py-1 font-mono text-xs text-[var(--muted)]">
+                  {item.period}
+                </p>
               </div>
-              <p className="mt-1 text-sm font-medium text-[var(--brand)]">{item.company}</p>
-              <ul className="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
+              <ul className="mt-4 space-y-2.5 text-sm text-[var(--muted)]">
                 {item.points.map((point) => (
-                  <li key={point}>• {point}</li>
+                  <li key={point} className="flex gap-2.5">
+                    <span className="mt-[0.34rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
+                    <span>{point}</span>
+                  </li>
                 ))}
               </ul>
             </article>

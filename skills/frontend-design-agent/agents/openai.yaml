@@ -1,0 +1,5 @@
+interface:
+  display_name: "Frontend Design Agent"
+  short_description: "Design bold, responsive Next.js frontend UI"
+  default_prompt: "Use $frontend-design-agent to redesign this page with a clear visual direction and production-ready responsive code edits."
+
